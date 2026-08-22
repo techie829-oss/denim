@@ -387,34 +387,39 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
+  align-items: center;
+  gap: 5.5px;
+  width: 44px;
+  height: 44px;
   margin-left: auto;
   padding: 8px;
+  background: transparent;
+  border: none;
   border-radius: var(--radius-sm);
   transition: background var(--dur-fast);
   cursor: pointer;
-  pointer-events: auto;
+  pointer-events: auto !important;
   position: relative;
-  z-index: 9002;
+  z-index: 9600;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
-.hamburger:hover { background: var(--white-10); }
+.hamburger:hover, .hamburger:active { background: rgba(255,255,255,0.12); }
 
 .ham-line {
   display: block;
-  width: 100%;
-  height: 1.5px;
+  width: 24px;
+  height: 2px;
   background: var(--cream);
   border-radius: 2px;
-  transition: transform var(--dur-med) var(--ease-out),
-              opacity var(--dur-fast);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease;
 }
 
 /* Hamburger open state */
-.hamburger.open .ham-line:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open .ham-line:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .hamburger.open .ham-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open .ham-line:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.hamburger.open .ham-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
 /* ---- Desktop (769px+): show nav links, hide mobile elements ---- */
 @media (min-width: 769px) {
@@ -431,36 +436,51 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible {
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(380px, 90vw);
-  background: var(--navy);
+  width: min(340px, 85vw);
+  background: #0d1525;
   z-index: 9500;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  transform: translateX(100%);
-  transition: transform var(--dur-slow) var(--ease-out);
+  padding: 1.75rem 1.75rem 2.5rem;
+  transform: translateX(105%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
   border-left: 1px solid rgba(255,255,255,0.08);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.5);
   pointer-events: none;
   visibility: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.open {
   transform: translateX(0);
-  pointer-events: auto;
-  visibility: visible;
+  pointer-events: auto !important;
+  visibility: visible !important;
 }
 
 .mobile-close {
   align-self: flex-end;
-  color: var(--cream-80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cream);
   font-size: 1.25rem;
-  padding: 0.5rem;
-  margin-bottom: 2rem;
-  transition: color var(--dur-fast), transform var(--dur-fast);
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  transition: all var(--dur-fast);
   cursor: pointer;
+  touch-action: manipulation;
+  border: 1px solid rgba(255,255,255,0.1);
+  -webkit-tap-highlight-color: transparent;
 }
-.mobile-close:hover { color: var(--cream); transform: rotate(90deg); }
+.mobile-close:hover, .mobile-close:active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  transform: rotate(90deg);
+}
 
 .mobile-links {
   display: flex;
@@ -471,16 +491,20 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible {
 
 .mobile-link {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
   font-weight: 700;
   color: var(--cream-80);
-  padding: 0.625rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: color var(--dur-fast), padding-left var(--dur-fast);
   display: block;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-.mobile-link:hover { color: var(--cream); padding-left: 0.75rem; }
+.mobile-link:hover, .mobile-link:active, .mobile-link.active {
+  color: #ffffff;
+  padding-left: 0.5rem;
+}
 
 .mobile-cta {
   margin-top: 2rem;
@@ -493,19 +517,20 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible {
 .mobile-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(10, 16, 29, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 9400;
   opacity: 0;
   pointer-events: none !important;
   visibility: hidden;
-  display: none;
-  transition: opacity var(--dur-med);
+  display: block;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .mobile-overlay.active {
   opacity: 1;
   pointer-events: auto !important;
-  visibility: visible;
-  display: block;
+  visibility: visible !important;
 }
 
 /* ========================================================= */
@@ -2095,6 +2120,7 @@ a, button {
   z-index: 99999;
   box-shadow: 0 0 10px rgba(44, 74, 142, 0.7);
   transition: width 0.1s ease-out;
+  pointer-events: none !important;
 }
 
 /* --- Clean Hero Typography --- */

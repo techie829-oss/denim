@@ -46,7 +46,7 @@
 
       <a href="contact.html" class="btn btn-outline nav-cta" id="nav-cta-btn">Enquire Now</a>
 
-      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav(event)">
         <span class="ham-line"></span>
         <span class="ham-line"></span>
         <span class="ham-line"></span>
@@ -56,7 +56,7 @@
 
   <!-- Mobile Menu & Overlay (Root Level) -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu">&#10005;</button>
+    <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu" onclick="closeMobileNav(event)">&#10005;</button>
     <ul class="mobile-links" role="list">
       <li><a href="index.html" class="mobile-link">Home</a></li>
       <li><a href="about.html" class="mobile-link">About</a></li>
@@ -67,7 +67,7 @@
     </ul>
     <a href="contact.html" class="btn btn-primary mobile-cta">Enquire Now</a>
   </div>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileNav(event)"></div>
 
   <main>
 

@@ -453,7 +453,7 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible {
 }
 
 .mobile-menu.open {
-  transform: translateX(0);
+  transform: translateX(0) !important;
   pointer-events: auto !important;
   visibility: visible !important;
 }

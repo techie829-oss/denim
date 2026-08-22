@@ -248,3 +248,171 @@ if (filterBtns.length > 0 && filterCards.length > 0) {
     }
   });
 })();
+
+/* =========================================================
+   SCROLL PROGRESS BAR
+   ========================================================= */
+const scrollProgressBar = document.getElementById('scroll-progress');
+if (scrollProgressBar) {
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgressBar.style.width = `${progress}%`;
+  }, { passive: true });
+}
+
+/* =========================================================
+   INTERACTIVE WASH STUDIO SWITCHER
+   ========================================================= */
+const washData = {
+  'raw-indigo': {
+    title: 'Raw Deep Indigo',
+    desc: 'Our flagship heavy-duty denim weave. Pure indigo dipped multiple times for unprecedented colour depth and natural personalized fading over time.',
+    img: 'images/img4.jpg',
+    weightVal: '14.5 oz (Heavy)',
+    weightBar: '95%',
+    fadeVal: 'High Honeycombs',
+    fadeBar: '90%',
+    stretchVal: '1% Natural Flex',
+    stretchBar: '30%'
+  },
+  'mid-wash': {
+    title: 'Vintage Mid-Blue',
+    desc: 'A sun-drenched classic. Enzyme stonewashed with subtle whisker patterning along thigh creases for a broken-in vintage look from day one.',
+    img: 'images/img5.jpg',
+    weightVal: '13.5 oz (Medium)',
+    weightBar: '80%',
+    fadeVal: 'Medium Contrast',
+    fadeBar: '65%',
+    stretchVal: '2% Comfort Spandex',
+    stretchBar: '50%'
+  },
+  'dark-wash': {
+    title: 'Midnight Obsidian',
+    desc: 'Dual sulfur and indigo dye bath delivering an intense dark tone with subtle satin sheen. Engineered for formal and evening silhouettes.',
+    img: 'images/img9.jpg',
+    weightVal: '14.0 oz (Medium-Heavy)',
+    weightBar: '88%',
+    fadeVal: 'Low / Deep Tone',
+    fadeBar: '25%',
+    stretchVal: '1.5% Ergonomic Stretch',
+    stretchBar: '40%'
+  },
+  'washed-grey': {
+    title: 'Washed Grey & Blue',
+    desc: 'Contemporary monochrome fade featuring brushed cotton yarn and artisanal scraping. Soft handfeel with high abrasion resistance.',
+    img: 'images/img1.jpg',
+    weightVal: '12.5 oz (Light-Medium)',
+    weightBar: '70%',
+    fadeVal: 'Artisanal Distressed',
+    fadeBar: '85%',
+    stretchVal: '2.5% Maximum Comfort',
+    stretchBar: '75%'
+  }
+};
+
+const washTabs = document.querySelectorAll('.wash-tab-btn');
+const washImg = document.getElementById('wash-preview-img');
+const washTitle = document.getElementById('wash-detail-title');
+const washDesc = document.getElementById('wash-detail-desc');
+const weightVal = document.getElementById('metric-weight-val');
+const weightBar = document.getElementById('metric-weight-bar');
+const fadeVal = document.getElementById('metric-fade-val');
+const fadeBar = document.getElementById('metric-fade-bar');
+const stretchVal = document.getElementById('metric-stretch-val');
+const stretchBar = document.getElementById('metric-stretch-bar');
+
+if (washTabs.length > 0 && washImg) {
+  washTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      washTabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const washKey = btn.getAttribute('data-wash');
+      const data = washData[washKey];
+      if (data) {
+        washImg.style.opacity = '0.3';
+        washImg.style.transform = 'scale(0.97)';
+        setTimeout(() => {
+          washImg.src = data.img;
+          washImg.alt = data.title;
+          if (washTitle) washTitle.textContent = data.title;
+          if (washDesc) washDesc.textContent = data.desc;
+          if (weightVal) weightVal.textContent = data.weightVal;
+          if (weightBar) weightBar.style.width = data.weightBar;
+          if (fadeVal) fadeVal.textContent = data.fadeVal;
+          if (fadeBar) fadeBar.style.width = data.fadeBar;
+          if (stretchVal) stretchVal.textContent = data.stretchVal;
+          if (stretchBar) stretchBar.style.width = data.stretchBar;
+          washImg.style.opacity = '1';
+          washImg.style.transform = 'scale(1)';
+        }, 150);
+      }
+    });
+  });
+}
+
+/* =========================================================
+   RAW VS FINISHED COMPARISON SLIDER
+   ========================================================= */
+const compareContainer = document.getElementById('compare-container');
+const compareAfterWrap = document.getElementById('compare-after-wrap');
+const compareSliderBar = document.getElementById('compare-slider-bar');
+
+if (compareContainer && compareAfterWrap && compareSliderBar) {
+  let isDragging = false;
+
+  function updateSlider(xPos) {
+    const rect = compareContainer.getBoundingClientRect();
+    let x = xPos - rect.left;
+    if (x < 0) x = 0;
+    if (x > rect.width) x = rect.width;
+    const percentage = (x / rect.width) * 100;
+    compareAfterWrap.style.width = `${percentage}%`;
+    compareSliderBar.style.left = `${percentage}%`;
+  }
+
+  function onPointerDown(e) {
+    isDragging = true;
+    updateSlider(e.pageX || (e.touches && e.touches[0].pageX));
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging) return;
+    updateSlider(e.pageX || (e.touches && e.touches[0].pageX));
+  }
+
+  function onPointerUp() {
+    isDragging = false;
+  }
+
+  compareContainer.addEventListener('mousedown', onPointerDown);
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('mouseup', onPointerUp);
+
+  compareContainer.addEventListener('touchstart', onPointerDown, { passive: true });
+  window.addEventListener('touchmove', onPointerMove, { passive: true });
+  window.addEventListener('touchend', onPointerUp);
+}
+
+/* =========================================================
+   SUBTLE 3D TILT EFFECT ON CARDS
+   ========================================================= */
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const tiltCards = document.querySelectorAll('.collection-item, .craft-img-block');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xPct = (x / rect.width - 0.5) * 10;
+      const yPct = (y / rect.height - 0.5) * -10;
+      card.style.transform = `perspective(1000px) rotateX(${yPct}deg) rotateY(${xPct}deg) translateY(-6px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+

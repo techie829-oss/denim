@@ -45,6 +45,37 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Top Luxury Announcement Ticker -->
+  <div class="top-ticker" aria-label="Announcement">
+    <div class="ticker-track">
+      <div class="ticker-item">
+        <span>✦ LUXURY DENIM ARCHIVE 2026</span>
+        <span class="ticker-star">★</span>
+        <span>HANDCRAFTED IN INDIA</span>
+        <span class="ticker-star">★</span>
+        <span>A UNIT OF RATHI ENTERPRISES</span>
+        <span class="ticker-star">★</span>
+        <span>PREMIUM 14.5 OZ WEAVES</span>
+        <span class="ticker-star">★</span>
+        <span>B2B & BESPOKE INQUIRIES OPEN</span>
+      </div>
+      <div class="ticker-item" aria-hidden="true">
+        <span>✦ LUXURY DENIM ARCHIVE 2026</span>
+        <span class="ticker-star">★</span>
+        <span>HANDCRAFTED IN INDIA</span>
+        <span class="ticker-star">★</span>
+        <span>A UNIT OF RATHI ENTERPRISES</span>
+        <span class="ticker-star">★</span>
+        <span>PREMIUM 14.5 OZ WEAVES</span>
+        <span class="ticker-star">★</span>
+        <span>B2B & BESPOKE INQUIRIES OPEN</span>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================== HEADER ===================== -->
   <header class="site-header" id="site-header" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
@@ -278,6 +309,103 @@
       </div>
     </section>
 
+    <!-- ===================== INTERACTIVE WASH & SPEC STUDIO ===================== -->
+    <section class="wash-studio section-pad" id="wash-studio" aria-label="Interactive denim wash studio">
+      <div class="container">
+        <div class="section-header reveal-up" style="text-align: center; margin-bottom: 2rem;">
+          <p class="section-eyebrow" style="color: var(--gold-light);">Interactive Studio</p>
+          <h2 class="section-title" style="color: #ffffff;">Explore Washes &amp; <em>Specs.</em></h2>
+          <p class="section-desc" style="color: var(--cream-80); margin: 0 auto; max-width: 600px;">Click through our signature washes to analyze fabric density, fade characteristics, and structural weave.</p>
+        </div>
+
+        <div class="wash-studio-grid">
+          <!-- Wash Selectors List -->
+          <div class="wash-tabs reveal-left" id="wash-tab-list">
+            <button class="wash-tab-btn active" data-wash="raw-indigo">
+              <div>
+                <span class="wash-tab-title">Raw Deep Indigo</span>
+                <span class="wash-tab-sub">Unwashed rigid weave, pure deep dye</span>
+              </div>
+              <span class="wash-tab-badge">14.5 OZ</span>
+            </button>
+
+            <button class="wash-tab-btn" data-wash="mid-wash">
+              <div>
+                <span class="wash-tab-title">Vintage Mid-Blue</span>
+                <span class="wash-tab-sub">Enzyme stonewashed with light whiskers</span>
+              </div>
+              <span class="wash-tab-badge">13.5 OZ</span>
+            </button>
+
+            <button class="wash-tab-btn" data-wash="dark-wash">
+              <div>
+                <span class="wash-tab-title">Midnight Obsidian</span>
+                <span class="wash-tab-sub">Dual sulfur dip with subtle sheen</span>
+              </div>
+              <span class="wash-tab-badge">14.0 OZ</span>
+            </button>
+
+            <button class="wash-tab-btn" data-wash="washed-grey">
+              <div>
+                <span class="wash-tab-title">Washed Grey &amp; Blue</span>
+                <span class="wash-tab-sub">Vintage distress, soft brushed handfeel</span>
+              </div>
+              <span class="wash-tab-badge">12.5 OZ</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Wash Display Card -->
+          <div class="wash-preview-card reveal-right" id="wash-preview-card">
+            <div class="wash-preview-img-wrap">
+              <img id="wash-preview-img" src="images/img4.jpg" alt="Raw Deep Indigo Denim" />
+            </div>
+            <div class="wash-preview-details">
+              <div class="wash-details-header">
+                <h3 id="wash-detail-title">Raw Deep Indigo</h3>
+                <p id="wash-detail-desc">Our flagship heavy-duty denim weave. Pure indigo dipped multiple times for unprecedented colour depth and natural personalized fading over time.</p>
+              </div>
+
+              <div class="wash-metrics">
+                <div class="wash-metric-row">
+                  <div class="metric-label-val">
+                    <span>Fabric Weight (Oz)</span>
+                    <strong id="metric-weight-val">14.5 oz (Heavy)</strong>
+                  </div>
+                  <div class="metric-bar-track">
+                    <div class="metric-bar-fill" id="metric-weight-bar" style="width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="wash-metric-row">
+                  <div class="metric-label-val">
+                    <span>Fade Contrast</span>
+                    <strong id="metric-fade-val">High Honeycombs</strong>
+                  </div>
+                  <div class="metric-bar-track">
+                    <div class="metric-bar-fill" id="metric-fade-bar" style="width: 90%;"></div>
+                  </div>
+                </div>
+
+                <div class="wash-metric-row">
+                  <div class="metric-label-val">
+                    <span>Comfort Stretch</span>
+                    <strong id="metric-stretch-val">1% Natural Flex</strong>
+                  </div>
+                  <div class="metric-bar-track">
+                    <div class="metric-bar-fill" id="metric-stretch-bar" style="width: 30%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#contact" class="btn btn-primary" style="text-align: center; justify-content: center; width: 100%;">
+                Inquire For This Wash
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== CRAFT / DETAILS ===================== -->
     <section class="craft section-pad" id="craft" aria-label="Denim craft and details">
       <div class="craft-bg-text" aria-hidden="true">CRAFT</div>
@@ -408,6 +536,36 @@
               <div class="journey-num journey-num--final" aria-hidden="true">D</div>
               <h3 class="journey-label">Denim.</h3>
               <p class="journey-desc">The result — a piece of denim that speaks for itself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RAW VS FINISHED COMPARISON SLIDER ===================== -->
+    <section class="compare-section" id="compare" aria-label="Raw vs Finished Comparison">
+      <div class="container">
+        <div class="section-header reveal-up" style="text-align: center;">
+          <p class="section-eyebrow">Transformation</p>
+          <h2 class="section-title">From Loom<br /><em>to Finished Silhouette.</em></h2>
+          <p class="section-desc" style="margin: 0 auto; max-width: 620px;">Drag the center divider to inspect the transformation from raw, unwashed indigo structure to masterfully crafted vintage hand-finish.</p>
+        </div>
+
+        <div class="compare-box reveal-up" id="compare-container">
+          <!-- Before / Raw Image -->
+          <img src="images/img8.jpg" alt="Raw Heavy Indigo Denim Texture" class="compare-img" />
+          <span class="compare-badge compare-badge--left">Raw Indigo Structure</span>
+
+          <!-- After / Washed Finished Image (Clipped) -->
+          <div class="compare-img-after" id="compare-after-wrap" style="width: 50%;">
+            <img src="images/img1.jpg" alt="Artisanal Washed Denim Finish" class="compare-img" style="width: 960px; max-width: none;" />
+            <span class="compare-badge compare-badge--right">Artisanal Vintage Wash</span>
+          </div>
+
+          <!-- Draggable Divider -->
+          <div class="compare-slider-bar" id="compare-slider-bar" style="left: 50%;">
+            <div class="compare-handle" aria-label="Drag to compare">
+              <span>&#8596;</span>
             </div>
           </div>
         </div>
@@ -565,6 +723,64 @@
       </div>
     </section>
 
+    <!-- ===================== EDITORIAL PRAISE & TESTIMONIALS ===================== -->
+    <section class="testimonials-section section-pad" id="testimonials" aria-label="Editorial Praise and Reviews">
+      <div class="container">
+        <div class="section-header reveal-up" style="text-align: center;">
+          <p class="section-eyebrow" style="color: var(--gold-light);">Industry Recognition</p>
+          <h2 class="section-title" style="color: #ffffff;">Editorial &amp; Client <em>Praise.</em></h2>
+          <p class="section-desc" style="color: var(--cream-80); margin: 0 auto; max-width: 600px;">What fashion editors, retail partners, and discerning denim purists say about our craft.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <!-- Review 1 -->
+          <div class="testimonial-card reveal-up" style="--delay:0.1s">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"The drape, the waistband gold typography, and the deep indigo retention rival luxury Japanese denim houses. Exceptional craftsmanship."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">VS</div>
+              <div>
+                <div class="author-name">Vikramaditya S.</div>
+                <div class="author-role">Apparel Retail Director, Mumbai</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="testimonial-card reveal-up" style="--delay:0.2s">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"Denim Machine's attention to seam tension and pocket geometry makes every pair fit with structured elegance right out of the box."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">AK</div>
+              <div>
+                <div class="author-name">Aanya Kapoor</div>
+                <div class="author-role">Contemporary Menswear Stylist</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="testimonial-card reveal-up" style="--delay:0.3s">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"Consistent dye batches and flawless leather patch detailing. Our customers specifically request Denim Machine collections every season."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">RR</div>
+              <div>
+                <div class="author-name">Rohan Rathore</div>
+                <div class="author-role">Multi-brand Boutique Owner, Delhi NCR</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== CONTACT / CTA ===================== -->
     <section class="contact section-pad" id="contact" aria-label="Contact Denim Machine">
       <div class="container">
@@ -677,10 +893,13 @@
     <div class="lightbox-counter" id="lightbox-counter" aria-live="polite"></div>
   </div>
 
-  <!-- Back to top -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16V4M4 10l6-6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
+  <!-- Floating Action Buttons -->
+  <div class="floating-actions" id="floating-actions">
+    <a href="https://wa.me/919999999999?text=Hello%20Denim%20Machine%2C%20I%20would%20like%20to%20inquire%20about%20your%20premium%20denim%20collection." target="_blank" rel="noopener noreferrer" class="wa-float-btn" aria-label="Chat with us on WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.146-.53-1.637-.681-2.695-2.339-2.777-2.449-.082-.11-1.002-1.332-1.002-2.54 0-1.208.634-1.802.859-2.045.225-.243.491-.304.654-.304.164 0 .328.002.471.01.153.009.358-.058.558.423.206.494.703 1.716.764 1.84.062.123.103.267.02.43-.082.164-.123.267-.245.41-.123.143-.258.32-.369.43-.123.123-.251.256-.108.502.143.246.636 1.05 1.365 1.7 0.938.835 1.728 1.093 1.974 1.216.246.123.39.102.533-.062.144-.164.614-.716.777-.962.164-.246.328-.205.553-.123s1.433.676 1.679.799c.246.123.41.184.471.287.061.102.061.594-.083.999zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.958-1.399C8.42 21.49 10.151 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      <span>WhatsApp Inquiries</span>
+    </a>
+  </div>
 
   <script src="main.js"></script>
 </body>

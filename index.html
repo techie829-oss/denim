@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denim Machine — Crafting Denim, Defining Everyday Style</title>
+  <meta name="description" content="Denim Machine is a premium denim brand established in 2020, a unit of Rathi Enterprises. Discover our denim collection crafted with attention to detail and contemporary styling." />
+  <meta name="keywords" content="Denim Machine, premium denim, jeans, denim collection, denim brand, Rathi Enterprises, denim manufacturing, indigo denim" />
+  <meta name="author" content="Denim Machine" />
+  <link rel="canonical" href="https://denimmachine.in/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Denim Machine — Crafting Denim, Defining Everyday Style" />
+  <meta property="og:description" content="Premium denim brand established 2020. A unit of Rathi Enterprises." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://denimmachine.in/" />
+  <meta property="og:image" content="images/img4.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Denim Machine — Crafting Denim, Defining Everyday Style" />
+  <meta name="twitter:description" content="Premium denim brand established 2020. A unit of Rathi Enterprises." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Denim Machine",
+    "description": "Premium denim brand established in 2020, a unit of Rathi Enterprises.",
+    "foundingDate": "2020",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Rathi Enterprises"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#home" class="nav-logo" aria-label="Denim Machine Home">
+        <img src="images/logo.png" alt="Denim Machine Logo" class="logo-img" width="56" height="56" />
+        <span class="logo-text">DENIM MACHINE</span>
+      </a>
+
+      <ul class="nav-links" role="list" id="nav-links">
+        <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="collection.html" class="nav-link">Collection</a></li>
+        <li><a href="craft.html" class="nav-link">Craft</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="contact.html" class="btn btn-outline nav-cta" id="nav-cta-btn">Enquire Now</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu & Overlay (Root Level) -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu">&#10005;</button>
+    <ul class="mobile-links" role="list">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="collection.html" class="mobile-link">Collection</a></li>
+      <li><a href="craft.html" class="mobile-link">Craft</a></li>
+      <li><a href="gallery.html" class="mobile-link">Gallery</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary mobile-cta">Enquire Now</a>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home" aria-label="Hero section">
+      <div class="hero-media">
+        <img
+          src="images/img4.jpg"
+          alt="Denim Machine — premium denim jeans with signature leather patch"
+          class="hero-img"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-grain"></div>
+      </div>
+
+      <div class="hero-content">
+
+        <!-- Brand badge -->
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>Est. 2020 &nbsp;·&nbsp; Unit of Rathi Enterprises</span>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="hero-headline">
+          Crafting Denim.<br />
+          <em>Defining Everyday Style.</em>
+        </h1>
+
+        <!-- What this brand is about -->
+        <p class="hero-sub">
+          A premium denim brand built around one craft — denim done right.<br />
+          Every stitch intentional. Every wash considered.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <a href="#collection" class="btn btn-primary hero-btn-1" id="hero-explore-btn">
+            Explore Collection
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-glass" id="hero-enquire-btn">Enquire Now</a>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-val">2020</span>
+            <span class="hero-stat-label">Established</span>
+          </div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-val">100%</span>
+            <span class="hero-stat-label">Denim Focused</span>
+          </div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-val">Rathi</span>
+            <span class="hero-stat-label">Enterprises</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ===================== BRAND INTRO ===================== -->
+    <section class="brand-intro section-pad" id="brand-intro" aria-label="Brand introduction">
+      <div class="container">
+        <div class="brand-intro-grid">
+          <div class="brand-intro-visual reveal-left">
+            <div class="brand-img-wrap">
+              <img
+                src="images/img7.jpg"
+                alt="Denim Machine — close-up of waistband and gold stitching detail"
+                loading="lazy"
+              />
+              <div class="brand-img-accent"></div>
+            </div>
+          </div>
+          <div class="brand-intro-text reveal-right">
+            <p class="section-eyebrow">Who We Are</p>
+            <h2 class="section-title">Built Around<br /><em>Denim.</em></h2>
+            <p class="body-text">Denim Machine is a dedicated denim brand born in 2020 under the Rathi Enterprises umbrella. From the first thread to the final stitch, everything we create is centred around the craft of denim.</p>
+            <p class="body-text">We believe denim is more than fabric — it is a language of everyday life, worn across seasons, occasions and generations. Our work is guided by that belief.</p>
+            <div class="brand-pills">
+              <span class="pill">Est. 2020</span>
+              <span class="pill">Rathi Enterprises</span>
+              <span class="pill">Denim Focused</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COLLECTION ===================== -->
+    <section class="collection section-pad" id="collection" aria-label="Denim collection">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow">Our Collection</p>
+          <h2 class="section-title">The Denim Edit</h2>
+          <p class="section-desc">Each piece in our collection represents a distinct expression of denim craftsmanship. Click any image to explore in detail.</p>
+        </div>
+
+        <div class="collection-grid">
+          <div class="collection-item reveal-up" data-index="0" tabindex="0" role="button" aria-label="View Classic Indigo collection piece" style="--delay:0.1s">
+            <div class="collection-img-wrap">
+              <img src="images/img4.jpg" alt="Denim Machine classic indigo jeans, rear view with signature patch and branded waistband" loading="lazy" />
+              <div class="collection-overlay">
+                <span class="collection-zoom" aria-hidden="true">&#8599;</span>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3 class="collection-name">Classic Indigo</h3>
+              <p class="collection-detail">Rear-detailed with signature leather patch</p>
+            </div>
+          </div>
+
+          <div class="collection-item reveal-up" data-index="1" tabindex="0" role="button" aria-label="View Mid Blue Denim collection piece" style="--delay:0.2s">
+            <div class="collection-img-wrap">
+              <img src="images/img5.jpg" alt="Denim Machine mid blue wash jeans, full front layout on flat surface" loading="lazy" />
+              <div class="collection-overlay">
+                <span class="collection-zoom" aria-hidden="true">&#8599;</span>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3 class="collection-name">Mid Blue Wash</h3>
+              <p class="collection-detail">Clean silhouette, gold accent stitching</p>
+            </div>
+          </div>
+
+          <div class="collection-item reveal-up collection-item--tall" data-index="2" tabindex="0" role="button" aria-label="View Signature Indigo collection piece" style="--delay:0.15s">
+            <div class="collection-img-wrap">
+              <img src="images/img2.jpg" alt="Denim Machine signature indigo denim collection, multiple pairs displayed" loading="lazy" />
+              <div class="collection-overlay">
+                <span class="collection-zoom" aria-hidden="true">&#8599;</span>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3 class="collection-name">Signature Indigo</h3>
+              <p class="collection-detail">The complete range, every shade of blue</p>
+            </div>
+          </div>
+
+          <div class="collection-item reveal-up" data-index="3" tabindex="0" role="button" aria-label="View Deep Blue collection piece" style="--delay:0.25s">
+            <div class="collection-img-wrap">
+              <img src="images/img6.jpg" alt="Denim Machine deep blue folded jeans with branded tag and leather patch" loading="lazy" />
+              <div class="collection-overlay">
+                <span class="collection-zoom" aria-hidden="true">&#8599;</span>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3 class="collection-name">Deep Blue</h3>
+              <p class="collection-detail">Structured fold, rich deep indigo</p>
+            </div>
+          </div>
+
+          <div class="collection-item reveal-up" data-index="4" tabindex="0" role="button" aria-label="View Dark Wash collection piece" style="--delay:0.3s">
+            <div class="collection-img-wrap">
+              <img src="images/img9.jpg" alt="Denim Machine dark wash indigo jeans with leather patch and branded label" loading="lazy" />
+              <div class="collection-overlay">
+                <span class="collection-zoom" aria-hidden="true">&#8599;</span>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3 class="collection-name">Dark Wash</h3>
+              <p class="collection-detail">Raw indigo depth with golden topstitch</p>
+            </div>
+          </div>
+
+          <div class="collection-item reveal-up" data-index="5" tabindex="0" role="button" aria-label="View Washed Grey collection piece" style="--delay:0.35s">
+            <div class="collection-img-wrap">
+              <img src="images/img1.jpg" alt="Denim Machine washed grey and blue denim jeans, flatlay collection spread" loading="lazy" />
+              <div class="collection-overlay">
+                <span class="collection-zoom" aria-hidden="true">&#8599;</span>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3 class="collection-name">Washed Grey</h3>
+              <p class="collection-detail">Vintage tones, contemporary fit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CRAFT / DETAILS ===================== -->
+    <section class="craft section-pad" id="craft" aria-label="Denim craft and details">
+      <div class="craft-bg-text" aria-hidden="true">CRAFT</div>
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow">The Detail</p>
+          <h2 class="section-title">The Details Matter.</h2>
+        </div>
+
+        <div class="craft-editorial">
+          <!-- Row 1 -->
+          <div class="craft-row craft-row--left reveal-left">
+            <div class="craft-img-block">
+              <img src="images/img3.jpg" alt="Denim Machine pocket detail — leather patch and stitching close-up" loading="lazy" />
+            </div>
+            <div class="craft-text-block">
+              <span class="craft-number" aria-hidden="true">01</span>
+              <h3 class="craft-label">Pocket Details</h3>
+              <p class="craft-desc">Every back pocket is engineered with precision — the arc, the depth, the angle. Stitching that holds form wash after wash.</p>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="craft-row craft-row--right reveal-right">
+            <div class="craft-text-block">
+              <span class="craft-number" aria-hidden="true">02</span>
+              <h3 class="craft-label">Waistband</h3>
+              <p class="craft-desc">The waistband is where brand identity meets comfort. Branded in gold, built to last — it defines the silhouette from the very top.</p>
+            </div>
+            <div class="craft-img-block">
+              <img src="images/img7.jpg" alt="Denim Machine waistband detail — gold Denim Machine lettering and front pocket construction" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="craft-row craft-row--left reveal-left">
+            <div class="craft-img-block">
+              <img src="images/img11.jpg" alt="Denim Machine waistband side detail with gold lettering and pocket stitching" loading="lazy" />
+            </div>
+            <div class="craft-text-block">
+              <span class="craft-number" aria-hidden="true">03</span>
+              <h3 class="craft-label">Stitching</h3>
+              <p class="craft-desc">Gold topstitching runs the length of every seam — a signature thread that elevates every piece from standard denim to something worth noticing.</p>
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="craft-row craft-row--right reveal-right">
+            <div class="craft-text-block">
+              <span class="craft-number" aria-hidden="true">04</span>
+              <h3 class="craft-label">Fabric & Finish</h3>
+              <p class="craft-desc">The texture of genuine denim — its weight, its weave, its character. We source fabric that improves with every wear.</p>
+            </div>
+            <div class="craft-img-block">
+              <img src="images/img8.jpg" alt="Denim Machine dark indigo denim close-up showing fabric texture and stitching" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FROM FABRIC TO FINISH ===================== -->
+    <section class="journey section-pad" id="journey" aria-label="From fabric to finish">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow">The Process</p>
+          <h2 class="section-title">From Fabric<br /><em>to Finish.</em></h2>
+        </div>
+
+        <div class="journey-flow">
+          <div class="journey-step reveal-up" style="--delay:0.05s">
+            <div class="journey-img">
+              <img src="images/img5.jpg" alt="Denim fabric — clean indigo weave, full-length view" loading="lazy" />
+            </div>
+            <div class="journey-step-info">
+              <div class="journey-num" aria-hidden="true">F</div>
+              <h3 class="journey-label">Fabric</h3>
+              <p class="journey-desc">Every piece starts with the right fabric — weight, weave and character chosen deliberately.</p>
+            </div>
+          </div>
+
+          <div class="journey-arrow" aria-hidden="true">&#8595;</div>
+
+          <div class="journey-step reveal-up" style="--delay:0.15s">
+            <div class="journey-img">
+              <img src="images/img1.jpg" alt="Denim construction — multiple jeans laid flat showing range and construction" loading="lazy" />
+            </div>
+            <div class="journey-step-info">
+              <div class="journey-num" aria-hidden="true">C</div>
+              <h3 class="journey-label">Construction</h3>
+              <p class="journey-desc">Cut and assembled with consistency, each pair shaped to maintain its form through every wear.</p>
+            </div>
+          </div>
+
+          <div class="journey-arrow" aria-hidden="true">&#8595;</div>
+
+          <div class="journey-step reveal-up" style="--delay:0.25s">
+            <div class="journey-img">
+              <img src="images/img3.jpg" alt="Denim stitching detail — golden topstitch along pocket edge" loading="lazy" />
+            </div>
+            <div class="journey-step-info">
+              <div class="journey-num" aria-hidden="true">S</div>
+              <h3 class="journey-label">Stitching</h3>
+              <p class="journey-desc">Gold-toned topstitching applied with care — the signature mark of every Denim Machine piece.</p>
+            </div>
+          </div>
+
+          <div class="journey-arrow" aria-hidden="true">&#8595;</div>
+
+          <div class="journey-step reveal-up" style="--delay:0.35s">
+            <div class="journey-img">
+              <img src="images/img9.jpg" alt="Denim finishing — dark wash denim folded with branded leather patch and hang tags" loading="lazy" />
+            </div>
+            <div class="journey-step-info">
+              <div class="journey-num" aria-hidden="true">F</div>
+              <h3 class="journey-label">Finishing</h3>
+              <p class="journey-desc">Washed, pressed and tagged — every detail is reviewed before a piece carries the Denim Machine name.</p>
+            </div>
+          </div>
+
+          <div class="journey-arrow" aria-hidden="true">&#8595;</div>
+
+          <div class="journey-step journey-step--final reveal-up" style="--delay:0.45s">
+            <div class="journey-img">
+              <img src="images/img6.jpg" alt="Finished Denim Machine product ready — deep blue premium jeans with hang tags" loading="lazy" />
+            </div>
+            <div class="journey-step-info">
+              <div class="journey-num journey-num--final" aria-hidden="true">D</div>
+              <h3 class="journey-label">Denim.</h3>
+              <p class="journey-desc">The result — a piece of denim that speaks for itself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY DENIM MACHINE ===================== -->
+    <section class="why section-pad" id="why" aria-label="Why Denim Machine">
+      <div class="why-bg">
+        <img src="images/img2.jpg" alt="" role="presentation" loading="lazy" />
+        <div class="why-bg-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="why-content">
+          <div class="section-header reveal-up" style="text-align:center; margin-bottom:4rem;">
+            <p class="section-eyebrow" style="color:var(--cream-60)">Our Values</p>
+            <h2 class="section-title" style="color:var(--cream)">Why<br /><em>Denim Machine.</em></h2>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card reveal-up" style="--delay:0.1s">
+              <div class="why-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M10 16l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="why-label">Denim-Focused Craftsmanship</h3>
+              <p class="why-text">Everything we do revolves around denim. It is our singular focus — not a category, but a craft.</p>
+            </div>
+
+            <div class="why-card reveal-up" style="--delay:0.2s">
+              <div class="why-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="why-label">Attention to Detail</h3>
+              <p class="why-text">From stitching tension to patch placement — every detail is considered, never left to chance.</p>
+            </div>
+
+            <div class="why-card reveal-up" style="--delay:0.3s">
+              <div class="why-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 24L16 8l10 16H6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="why-label">Contemporary Styling</h3>
+              <p class="why-text">Classic denim DNA updated for today — silhouettes and washes that feel current and wearable.</p>
+            </div>
+
+            <div class="why-card reveal-up" style="--delay:0.4s">
+              <div class="why-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <h3 class="why-label">Consistent Presentation</h3>
+              <p class="why-text">Every piece that leaves under our name carries the same standard of quality and finish.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about section-pad" id="about" aria-label="About Denim Machine">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-imagery reveal-left">
+            <div class="about-img-stack">
+              <div class="about-img-main">
+                <img src="images/img10.jpg" alt="Denim Machine dark indigo jeans folded — leather patch and hang tags visible" loading="lazy" />
+              </div>
+              <div class="about-img-secondary">
+                <img src="images/img8.jpg" alt="Denim Machine dark blue denim close-up with pocket and stitching detail" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content reveal-right">
+            <p class="section-eyebrow">About Us</p>
+            <h2 class="section-title about-title">
+              DENIM<br />MACHINE
+            </h2>
+            <div class="about-divider"></div>
+            <p class="body-text">Founded in 2020, Denim Machine operates as a unit of Rathi Enterprises — brought to life with the sole purpose of crafting denim that carries both character and consistency.</p>
+            <p class="body-text">We are a brand built on one material, one discipline, and one standard: doing denim right.</p>
+            <div class="about-facts">
+              <div class="fact-item">
+                <span class="fact-value">2020</span>
+                <span class="fact-label">Established</span>
+              </div>
+              <div class="fact-divider" aria-hidden="true"></div>
+              <div class="fact-item">
+                <span class="fact-value">Rathi</span>
+                <span class="fact-label">Enterprises</span>
+              </div>
+              <div class="fact-divider" aria-hidden="true"></div>
+              <div class="fact-item">
+                <span class="fact-value">100%</span>
+                <span class="fact-label">Denim</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section class="gallery section-pad" id="gallery" aria-label="Gallery of Denim Machine products">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow">Gallery</p>
+          <h2 class="section-title">The Denim<br /><em>in Detail.</em></h2>
+        </div>
+
+        <div class="gallery-masonry" id="gallery-grid">
+          <div class="gallery-item" data-src="images/img1.jpg" tabindex="0" role="button" aria-label="View gallery image — multiple denim jeans collection" style="--delay:0.05s">
+            <img src="images/img1.jpg" alt="Denim Machine — multiple denim jeans, flatlay collection spread showing range of washes" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item gallery-item--tall" data-src="images/img4.jpg" tabindex="0" role="button" aria-label="View gallery image — classic indigo back view" style="--delay:0.1s">
+            <img src="images/img4.jpg" alt="Denim Machine — classic indigo jeans rear view with leather patch and branded waistband" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/img5.jpg" tabindex="0" role="button" aria-label="View gallery image — mid blue full length" style="--delay:0.15s">
+            <img src="images/img5.jpg" alt="Denim Machine — mid blue wash jeans full front layout on flat surface" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/img6.jpg" tabindex="0" role="button" aria-label="View gallery image — deep blue folded" style="--delay:0.2s">
+            <img src="images/img6.jpg" alt="Denim Machine — deep blue jeans folded with product tag and leather patch" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item gallery-item--wide" data-src="images/img7.jpg" tabindex="0" role="button" aria-label="View gallery image — waistband detail" style="--delay:0.25s">
+            <img src="images/img7.jpg" alt="Denim Machine — waistband closeup with gold lettering and front pocket detail" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/img3.jpg" tabindex="0" role="button" aria-label="View gallery image — pocket detail" style="--delay:0.3s">
+            <img src="images/img3.jpg" alt="Denim Machine — back pocket detail with leather patch and stitching" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/img8.jpg" tabindex="0" role="button" aria-label="View gallery image — dark indigo close up" style="--delay:0.35s">
+            <img src="images/img8.jpg" alt="Denim Machine — dark indigo jeans folded detail" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item gallery-item--tall" data-src="images/img11.jpg" tabindex="0" role="button" aria-label="View gallery image — side waistband" style="--delay:0.4s">
+            <img src="images/img11.jpg" alt="Denim Machine — side waistband detail with gold Denim Machine lettering" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/img9.jpg" tabindex="0" role="button" aria-label="View gallery image — dark wash detail" style="--delay:0.45s">
+            <img src="images/img9.jpg" alt="Denim Machine — dark wash jeans with leather patch label visible" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/img10.jpg" tabindex="0" role="button" aria-label="View gallery image — folded dark blue" style="--delay:0.5s">
+            <img src="images/img10.jpg" alt="Denim Machine — folded dark blue jeans with branded hang tags and leather patch" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+          <div class="gallery-item gallery-item--wide" data-src="images/img2.jpg" tabindex="0" role="button" aria-label="View gallery image — full collection" style="--delay:0.55s">
+            <img src="images/img2.jpg" alt="Denim Machine — full collection displayed, multiple pairs with branded tags" loading="lazy" />
+            <div class="gallery-hover"><span aria-hidden="true">&#8599;</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT / CTA ===================== -->
+    <section class="contact section-pad" id="contact" aria-label="Contact Denim Machine">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-intro reveal-left">
+            <p class="section-eyebrow">Get in Touch</p>
+            <h2 class="section-title contact-title">Let's Talk<br /><em>Denim.</em></h2>
+            <p class="body-text contact-desc">Connect with Denim Machine for product enquiries, business opportunities and collaborations.</p>
+            <div class="contact-img-block">
+              <img src="images/img2.jpg" alt="Denim Machine collection — premium denim jeans range" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="contact-form-wrap reveal-right">
+            <form class="contact-form" id="contact-form" novalidate aria-label="Contact enquiry form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Full Name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="contact-company" class="form-label">Company</label>
+                <input type="text" id="contact-company" name="company" class="form-input" placeholder="Company Name" autocomplete="organization" />
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="you@email.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="contact-phone" class="form-label">Phone Number</label>
+                <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="+91 00000 00000" autocomplete="tel" />
+              </div>
+              <div class="form-group form-group--full">
+                <label for="contact-message" class="form-label">Your Message <span aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Tell us about your enquiry or interest..." required rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">
+                <span class="btn-text">Send Enquiry</span>
+                <span class="btn-arrow" aria-hidden="true">&#8594;</span>
+              </button>
+              <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Thank you — we'll be in touch shortly.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo" aria-label="Denim Machine — back to top">
+            <img src="images/logo.png" alt="Denim Machine Logo" width="60" height="60" loading="lazy" />
+            <span class="footer-logo-text">DENIM MACHINE</span>
+          </a>
+          <p class="footer-tagline">Crafting Denim. Defining Everyday Style.</p>
+          <p class="footer-unit">A Unit of Rathi Enterprises &nbsp;·&nbsp; Est. 2020</p>
+        </div>
+
+        <div class="footer-nav-group">
+          <h3 class="footer-nav-title">Navigate</h3>
+          <ul class="footer-nav" role="list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="collection.html" class="footer-link">Collection</a></li>
+            <li><a href="craft.html" class="footer-link">Craft</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-group">
+          <h3 class="footer-nav-title">Brand & Legal</h3>
+          <ul class="footer-nav" role="list">
+            <li><a href="about.html" class="footer-link">Our Story</a></li>
+            <li><a href="craft.html" class="footer-link">Craftsmanship</a></li>
+            <li><a href="collection.html" class="footer-link">The Collection</a></li>
+            <li><a href="contact.html" class="footer-link">Enquire</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-enquire">
+          <h3 class="footer-nav-title">Ready to Connect?</h3>
+          <p class="footer-enquire-text">For product enquiries and business opportunities, reach out to us directly.</p>
+          <a href="contact.html" class="btn btn-outline footer-cta-btn">Enquire Now</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2024 Denim Machine. Unit of Rathi Enterprises. All rights reserved.</p>
+        <p class="footer-copy footer-copy--right"><a href="privacy.html" class="footer-link" style="color:inherit; font-size:inherit;">Privacy Policy</a> &nbsp;·&nbsp; Est. 2020</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&#10005;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+    <div class="lightbox-inner">
+      <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+    </div>
+    <div class="lightbox-counter" id="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16V4M4 10l6-6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -2097,49 +2097,6 @@ a, button {
   transition: width 0.1s ease-out;
 }
 
-/* --- Top Luxury Announcement Ticker --- */
-.top-ticker {
-  background: #090f1d;
-  color: var(--gold-light);
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 0.5rem 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 9005;
-  border-bottom: 1px solid rgba(200, 168, 80, 0.15);
-}
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: tickerScroll 25s linear infinite;
-  gap: 3rem;
-  white-space: nowrap;
-}
-
-.ticker-track:hover {
-  animation-play-state: paused;
-}
-
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.ticker-star {
-  color: var(--gold);
-  font-size: 0.65rem;
-}
-
-@keyframes tickerScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 /* --- Glowing Gold & Shimmer Elements --- */
 .hero-headline em {
   font-style: italic;

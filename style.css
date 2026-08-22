@@ -2517,7 +2517,7 @@ a, button {
   color: var(--cream-60);
 }
 
-/* --- Floating Actions: WhatsApp --- */
+/* --- Floating Actions: WhatsApp (Icon Only) --- */
 .floating-actions {
   position: fixed;
   bottom: 2rem;
@@ -2530,16 +2530,14 @@ a, button {
 }
 
 .wa-float-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.65rem;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
   background: #25D366;
   color: #ffffff !important;
-  padding: 0.75rem 1.25rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 0.9375rem;
-  letter-spacing: 0.02em;
+  border-radius: 50%;
   box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
@@ -2553,15 +2551,15 @@ a, button {
 }
 
 .wa-float-btn svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
   flex-shrink: 0;
 }
 
 .wa-float-btn:hover {
   background: #20ba59;
-  transform: translateY(-3px) scale(1.03);
+  transform: translateY(-4px) scale(1.08);
   box-shadow: 0 14px 30px -4px rgba(37, 211, 102, 0.7);
   color: #fff !important;
 }
@@ -2588,12 +2586,13 @@ a, button {
     bottom: 1.25rem;
     right: 1.25rem;
   }
-  .wa-float-btn span {
-    display: none;
-  }
   .wa-float-btn {
-    padding: 0.85rem;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  .wa-float-btn svg {
+    width: 26px;
+    height: 26px;
   }
 }
 

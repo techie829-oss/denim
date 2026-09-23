@@ -313,7 +313,7 @@ const washData = {
   'raw-indigo': {
     title: 'Raw Deep Indigo',
     desc: 'Our flagship heavy-duty denim weave. Pure indigo dipped multiple times for unprecedented colour depth and natural personalized fading over time.',
-    img: 'images/img4.jpg',
+    img: 'images/collection-flatlay-tags.jpg',
     weightVal: '14.5 oz (Heavy)',
     weightBar: '95%',
     fadeVal: 'High Honeycombs',
@@ -324,7 +324,7 @@ const washData = {
   'mid-wash': {
     title: 'Vintage Mid-Blue',
     desc: 'A sun-drenched classic. Enzyme stonewashed with subtle whisker patterning along thigh creases for a broken-in vintage look from day one.',
-    img: 'images/img5.jpg',
+    img: 'images/craft-front-pocket.jpg',
     weightVal: '13.5 oz (Medium)',
     weightBar: '80%',
     fadeVal: 'Medium Contrast',
@@ -335,7 +335,7 @@ const washData = {
   'dark-wash': {
     title: 'Midnight Obsidian',
     desc: 'Dual sulfur and indigo dye bath delivering an intense dark tone with subtle satin sheen. Engineered for formal and evening silhouettes.',
-    img: 'images/img9.jpg',
+    img: 'images/craft-waistband-gold.jpg',
     weightVal: '14.0 oz (Medium-Heavy)',
     weightBar: '88%',
     fadeVal: 'Low / Deep Tone',
@@ -346,7 +346,7 @@ const washData = {
   'washed-grey': {
     title: 'Washed Grey & Blue',
     desc: 'Contemporary monochrome fade featuring brushed cotton yarn and artisanal scraping. Soft handfeel with high abrasion resistance.',
-    img: 'images/img1.jpg',
+    img: 'images/model-front-charcoal.jpg',
     weightVal: '12.5 oz (Light-Medium)',
     weightBar: '70%',
     fadeVal: 'Artisanal Distressed',

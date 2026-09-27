@@ -443,14 +443,14 @@ if (compareContainer && compareAfterWrap && compareSliderBar) {
    SUBTLE 3D TILT EFFECT ON CARDS
    ========================================================= */
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  const tiltCards = document.querySelectorAll('.collection-item, .craft-img-block');
+  const tiltCards = document.querySelectorAll('.collection-item, .craft-img-block, .lookbook-card, .why-card');
   tiltCards.forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      const xPct = (x / rect.width - 0.5) * 10;
-      const yPct = (y / rect.height - 0.5) * -10;
+      const xPct = (x / rect.width - 0.5) * 8;
+      const yPct = (y / rect.height - 0.5) * -8;
       card.style.transform = `perspective(1000px) rotateX(${yPct}deg) rotateY(${xPct}deg) translateY(-6px)`;
     });
 
@@ -459,4 +459,222 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
   });
 }
+
+/* =========================================================
+   HERO FULLSCREEN SLIDER / CAROUSEL
+   ========================================================= */
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  const prevBtn = document.getElementById('hero-prev-btn');
+  const nextBtn = document.getElementById('hero-next-btn');
+  const slideNum = document.getElementById('hero-slide-num');
+  const heroSlider = document.querySelector('.hero-slider');
+  const progressFill = document.getElementById('hero-progress-fill');
+
+  if (!slides.length) return;
+
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+  let slideInterval = null;
+  const slideDuration = 5500; // 5.5s
+  let progressStartTime = 0;
+  let progressAnimationId = null;
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    if (dots[currentSlide]) {
+      dots[currentSlide].classList.remove('active');
+      const oldBar = dots[currentSlide].querySelector('.hero-dot-bar');
+      if (oldBar) oldBar.style.animation = 'none';
+    }
+
+    currentSlide = (index + totalSlides) % totalSlides;
+
+    slides[currentSlide].classList.add('active');
+    if (dots[currentSlide]) {
+      dots[currentSlide].classList.add('active');
+      const newBar = dots[currentSlide].querySelector('.hero-dot-bar');
+      if (newBar) {
+        newBar.offsetHeight; // trigger reflow
+        newBar.style.animation = `heroDotProgress ${slideDuration}ms linear forwards`;
+      }
+    }
+
+    if (slideNum) {
+      slideNum.textContent = `0${currentSlide + 1} / 0${totalSlides}`;
+    }
+
+    resetProgress();
+  }
+
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    slideInterval = setInterval(nextSlide, slideDuration);
+    startProgress();
+  }
+
+  function stopAutoplay() {
+    if (slideInterval) clearInterval(slideInterval);
+    if (progressAnimationId) cancelAnimationFrame(progressAnimationId);
+  }
+
+  function startProgress() {
+    progressStartTime = performance.now();
+    function step(now) {
+      const elapsed = now - progressStartTime;
+      const pct = Math.min((elapsed / slideDuration) * 100, 100);
+      if (progressFill) progressFill.style.width = `${pct}%`;
+      if (elapsed < slideDuration) {
+        progressAnimationId = requestAnimationFrame(step);
+      }
+    }
+    progressAnimationId = requestAnimationFrame(step);
+  }
+
+  function resetProgress() {
+    if (progressFill) progressFill.style.width = '0%';
+    progressStartTime = performance.now();
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      goToSlide(idx);
+      startAutoplay();
+    });
+  });
+
+  if (heroSlider) {
+    heroSlider.addEventListener('mouseenter', stopAutoplay);
+    heroSlider.addEventListener('mouseleave', startAutoplay);
+
+    // Touch swipe for mobile
+    let touchStartX = 0;
+    heroSlider.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSlider.addEventListener('touchend', e => {
+      const touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        nextSlide();
+        startAutoplay();
+      } else if (touchEndX - touchStartX > 50) {
+        prevSlide();
+        startAutoplay();
+      }
+    }, { passive: true });
+  }
+
+  goToSlide(0);
+  startAutoplay();
+}
+
+/* =========================================================
+   LOOKBOOK INTERACTIVE CAROUSEL CONTROLLER & LIGHTBOX
+   ========================================================= */
+function initLookbookCarousel() {
+  const carousel = document.getElementById('lookbook-carousel');
+  const prevBtn = document.getElementById('lookbook-prev-btn');
+  const nextBtn = document.getElementById('lookbook-next-btn');
+
+  if (!carousel) return;
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -340, behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: 340, behavior: 'smooth' });
+    });
+  }
+
+  const lookbookCards = carousel.querySelectorAll('.lookbook-card');
+  if (lookbookCards.length > 0) {
+    const lookbookImgs = [...lookbookCards].map(item => {
+      const img = item.querySelector('img');
+      return { src: img ? img.src : '', alt: img ? img.alt : '' };
+    });
+
+    lookbookCards.forEach((card, i) => {
+      card.addEventListener('click', () => {
+        lbImages = lookbookImgs;
+        lbIndex = i;
+        lbShow();
+      });
+
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  }
+}
+
+/* =========================================================
+   ANIMATED NUMBER COUNTERS
+   ========================================================= */
+function initAnimatedCounters() {
+  const counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target') || '0', 10);
+        const duration = 1600; // ms
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const currentVal = Math.floor(easeProgress * target);
+          el.textContent = currentVal;
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.textContent = target;
+          }
+        }
+
+        requestAnimationFrame(updateCount);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  counters.forEach(counter => observer.observe(counter));
+}
+
+// Initialize dynamic features
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
+    initLookbookCarousel();
+    initAnimatedCounters();
+  });
+} else {
+  initHeroSlider();
+  initLookbookCarousel();
+  initAnimatedCounters();
+}
+
 

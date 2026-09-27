@@ -24,7 +24,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -92,19 +92,73 @@
 
   <main>
 
-    <!-- ===================== HERO ===================== -->
-    <section class="hero" id="home" aria-label="Hero section">
-      <div class="hero-media">
-        <img
-          src="images/model-front-charcoal.jpg"
-          alt="Denim Machine — Premium denim jeans worn by model in charcoal vintage wash"
-          class="hero-img"
-          loading="eager"
-          fetchpriority="high"
-        />
-        <div class="hero-overlay"></div>
-        <div class="hero-grain"></div>
+    <!-- ===================== HERO SLIDER ===================== -->
+    <section class="hero hero-slider" id="home" aria-label="Hero slider">
+      <div class="hero-slides" id="hero-slides">
+        <div class="hero-slide active" data-slide="0">
+          <img
+            src="images/model-front-charcoal.jpg"
+            alt="Denim Machine — Premium denim jeans worn by model in charcoal vintage wash"
+            class="hero-slide-img"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="hero-slide-tag">Signature Cut · Charcoal Vintage Wash</div>
+        </div>
+
+        <div class="hero-slide" data-slide="1">
+          <img
+            src="images/model-back-indigo.jpg"
+            alt="Denim Machine — Classic indigo tailored denim jeans on model"
+            class="hero-slide-img"
+            loading="lazy"
+          />
+          <div class="hero-slide-tag">Heritage Indigo · Tailored Regular Fit</div>
+        </div>
+
+        <div class="hero-slide" data-slide="2">
+          <img
+            src="images/collection-flatlay-tags.jpg"
+            alt="Denim Machine — Signature collection flatlay with original tags and leather patch"
+            class="hero-slide-img"
+            loading="lazy"
+          />
+          <div class="hero-slide-tag">Artisanal Archive · Original Tags &amp; Hardware</div>
+        </div>
+
+        <div class="hero-slide" data-slide="3">
+          <img
+            src="images/craft-waistband-gold.jpg"
+            alt="Denim Machine — High-tensile gold topstitching and interior waistband detail"
+            class="hero-slide-img"
+            loading="lazy"
+          />
+          <div class="hero-slide-tag">Master Craft · Gold Topstitching &amp; Waistband</div>
+        </div>
       </div>
+
+      <div class="hero-overlay"></div>
+      <div class="hero-grain"></div>
+
+      <!-- Hero Slide Controls -->
+      <div class="hero-slider-controls" aria-label="Hero slider navigation">
+        <button class="hero-nav-btn prev" id="hero-prev-btn" aria-label="Previous slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="hero-dots" id="hero-dots" role="tablist">
+          <button class="hero-dot active" data-dot="0" role="tab" aria-label="Slide 1" aria-selected="true"><span class="hero-dot-bar"></span></button>
+          <button class="hero-dot" data-dot="1" role="tab" aria-label="Slide 2" aria-selected="false"><span class="hero-dot-bar"></span></button>
+          <button class="hero-dot" data-dot="2" role="tab" aria-label="Slide 3" aria-selected="false"><span class="hero-dot-bar"></span></button>
+          <button class="hero-dot" data-dot="3" role="tab" aria-label="Slide 4" aria-selected="false"><span class="hero-dot-bar"></span></button>
+        </div>
+        <button class="hero-nav-btn next" id="hero-next-btn" aria-label="Next slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <span class="hero-slide-num" id="hero-slide-num">01 / 04</span>
+      </div>
+
+      <!-- Slide Progress Bar -->
+      <div class="hero-progress" id="hero-progress"><span class="hero-progress-fill" id="hero-progress-fill"></span></div>
 
       <div class="hero-content">
 
@@ -135,16 +189,21 @@
           <a href="#contact" class="btn btn-glass" id="hero-enquire-btn">Enquire Now</a>
         </div>
 
-        <!-- Stats strip -->
+        <!-- Stats strip with interactive counter data -->
         <div class="hero-stats">
           <div class="hero-stat">
-            <span class="hero-stat-val">2020</span>
+            <span class="hero-stat-val counter" data-target="2020">2020</span>
             <span class="hero-stat-label">Established</span>
           </div>
           <div class="hero-stat-div" aria-hidden="true"></div>
           <div class="hero-stat">
-            <span class="hero-stat-val">100%</span>
+            <span class="hero-stat-val"><span class="counter" data-target="100">100</span>%</span>
             <span class="hero-stat-label">Denim Focused</span>
+          </div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-val"><span class="counter" data-target="18">18</span>+</span>
+            <span class="hero-stat-label">Signature Cuts</span>
           </div>
           <div class="hero-stat-div" aria-hidden="true"></div>
           <div class="hero-stat">
@@ -160,6 +219,44 @@
         <span class="scroll-label">Scroll</span>
       </div>
     </section>
+
+    <!-- ===================== INFINITE BRAND MARQUEE ===================== -->
+    <div class="brand-marquee" aria-label="Brand highlights ticker">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>★ PREMIUM INDIGO RAW DENIM</span>
+          <span class="marquee-sep">✦</span>
+          <span>CRAFTED IN INDIA</span>
+          <span class="marquee-sep">✦</span>
+          <span>ESTABLISHED 2020</span>
+          <span class="marquee-sep">✦</span>
+          <span>HIGH-TENSILE GOLD STITCHING</span>
+          <span class="marquee-sep">✦</span>
+          <span>UNIT OF RATHI ENTERPRISES</span>
+          <span class="marquee-sep">✦</span>
+          <span>BESPOKE WASH STUDIO</span>
+          <span class="marquee-sep">✦</span>
+          <span>100% QUALITY ASSURED</span>
+          <span class="marquee-sep">✦</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>★ PREMIUM INDIGO RAW DENIM</span>
+          <span class="marquee-sep">✦</span>
+          <span>CRAFTED IN INDIA</span>
+          <span class="marquee-sep">✦</span>
+          <span>ESTABLISHED 2020</span>
+          <span class="marquee-sep">✦</span>
+          <span>HIGH-TENSILE GOLD STITCHING</span>
+          <span class="marquee-sep">✦</span>
+          <span>UNIT OF RATHI ENTERPRISES</span>
+          <span class="marquee-sep">✦</span>
+          <span>BESPOKE WASH STUDIO</span>
+          <span class="marquee-sep">✦</span>
+          <span>100% QUALITY ASSURED</span>
+          <span class="marquee-sep">✦</span>
+        </div>
+      </div>
+    </div>
 
     <!-- ===================== BRAND INTRO ===================== -->
     <section class="brand-intro section-pad" id="brand-intro" aria-label="Brand introduction">
@@ -196,7 +293,127 @@
         <div class="section-header reveal-up">
           <p class="section-eyebrow">Our Collection</p>
           <h2 class="section-title">The Denim Edit</h2>
-          <p class="section-desc">Each piece in our collection represents a distinct expression of denim craftsmanship. Click any image to explore in detail.</p>
+          <p class="section-desc">Each piece in our collection represents a distinct expression of denim craftsmanship. Slide or click to explore every detail.</p>
+        </div>
+
+        <!-- ===================== INTERACTIVE LOOKBOOK SLIDER ===================== -->
+        <div class="lookbook-slider-section reveal-up">
+          <div class="lookbook-slider-header">
+            <div class="lookbook-badge">
+              <span class="pulse-dot"></span>
+              <span>Interactive Lookbook &amp; Cuts Carousel</span>
+            </div>
+            <div class="lookbook-nav">
+              <button class="lookbook-nav-btn prev" id="lookbook-prev-btn" aria-label="Previous lookbook slide">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              </button>
+              <button class="lookbook-nav-btn next" id="lookbook-next-btn" aria-label="Next lookbook slide">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="lookbook-carousel-wrap">
+            <div class="lookbook-carousel" id="lookbook-carousel">
+              <!-- Slide 1 -->
+              <div class="lookbook-card" data-index="0" tabindex="0" role="button" aria-label="Open Charcoal Vintage Wash in viewer">
+                <div class="lookbook-img-box">
+                  <img src="images/model-front-charcoal.jpg" alt="Charcoal Vintage Wash on model" loading="lazy" />
+                  <span class="lookbook-card-pill">On Model</span>
+                  <div class="lookbook-zoom-indicator"><span>&#8599;</span></div>
+                </div>
+                <div class="lookbook-card-info">
+                  <span class="lookbook-card-tag">Signature Cut</span>
+                  <h4 class="lookbook-card-title">Charcoal Vintage Wash</h4>
+                  <p class="lookbook-card-desc">Hand-scraped fade pattern with relaxed contemporary rise.</p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="lookbook-card" data-index="1" tabindex="0" role="button" aria-label="Open Classic Indigo Fit in viewer">
+                <div class="lookbook-img-box">
+                  <img src="images/model-back-indigo.jpg" alt="Classic Indigo Fit on model" loading="lazy" />
+                  <span class="lookbook-card-pill">On Model</span>
+                  <div class="lookbook-zoom-indicator"><span>&#8599;</span></div>
+                </div>
+                <div class="lookbook-card-info">
+                  <span class="lookbook-card-tag">Heritage Indigo</span>
+                  <h4 class="lookbook-card-title">Classic Indigo Fit</h4>
+                  <p class="lookbook-card-desc">Deep indigo retention wash with signature leather back patch.</p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="lookbook-card" data-index="2" tabindex="0" role="button" aria-label="Open Artisanal Archive Flatlay in viewer">
+                <div class="lookbook-img-box">
+                  <img src="images/collection-flatlay-tags.jpg" alt="Artisanal Archive Flatlay" loading="lazy" />
+                  <span class="lookbook-card-pill">Signature</span>
+                  <div class="lookbook-zoom-indicator"><span>&#8599;</span></div>
+                </div>
+                <div class="lookbook-card-info">
+                  <span class="lookbook-card-tag">Archive Flatlay</span>
+                  <h4 class="lookbook-card-title">Original Brand Tags</h4>
+                  <p class="lookbook-card-desc">Factory certified authentic hardware, patches, and tags.</p>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="lookbook-card" data-index="3" tabindex="0" role="button" aria-label="Open Rear Pocket Patch in viewer">
+                <div class="lookbook-img-box">
+                  <img src="images/craft-pocket-patch.jpg" alt="Rear Pocket Leather Patch" loading="lazy" />
+                  <span class="lookbook-card-pill">Hardware</span>
+                  <div class="lookbook-zoom-indicator"><span>&#8599;</span></div>
+                </div>
+                <div class="lookbook-card-info">
+                  <span class="lookbook-card-tag">Pocket Architecture</span>
+                  <h4 class="lookbook-card-title">Artisanal Leather Patch</h4>
+                  <p class="lookbook-card-desc">Embossed Regd. T.M. leather patch with dual gold topstitching.</p>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="lookbook-card" data-index="4" tabindex="0" role="button" aria-label="Open Gold Thread Waistband in viewer">
+                <div class="lookbook-img-box">
+                  <img src="images/craft-waistband-gold.jpg" alt="Gold Thread Waistband" loading="lazy" />
+                  <span class="lookbook-card-pill">Master Stitch</span>
+                  <div class="lookbook-zoom-indicator"><span>&#8599;</span></div>
+                </div>
+                <div class="lookbook-card-info">
+                  <span class="lookbook-card-tag">Interior Finish</span>
+                  <h4 class="lookbook-card-title">Gold Thread Waistband</h4>
+                  <p class="lookbook-card-desc">Rich gold embroidered typography on clean interior facing.</p>
+                </div>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="lookbook-card" data-index="5" tabindex="0" role="button" aria-label="Open Front Pocket Scoop in viewer">
+                <div class="lookbook-img-box">
+                  <img src="images/craft-front-pocket.jpg" alt="Front Pocket Scoop and Copper Rivet" loading="lazy" />
+                  <span class="lookbook-card-pill">Structure</span>
+                  <div class="lookbook-zoom-indicator"><span>&#8599;</span></div>
+                </div>
+                <div class="lookbook-card-info">
+                  <span class="lookbook-card-tag">Reinforced Rivet</span>
+                  <h4 class="lookbook-card-title">Front Pocket Scoop</h4>
+                  <p class="lookbook-card-desc">Heavy-duty copper rivets with high-strain corner bar-tacking.</p>
+                </div>
+              </div>
+
+              <!-- Slide 7 -->
+              <div class="lookbook-card" data-index="6" tabindex="0" role="button" aria-label="Open Shank Button Hardware in viewer">
+                <div class="lookbook-img-box">
+                  <img src="images/craft-button-hardware.jpg" alt="Embossed Zinc Shank Button" loading="lazy" />
+                  <span class="lookbook-card-pill">Branded</span>
+                  <div class="lookbook-zoom-indicator"><span>&#8599;</span></div>
+                </div>
+                <div class="lookbook-card-info">
+                  <span class="lookbook-card-tag">Custom Hardware</span>
+                  <h4 class="lookbook-card-title">Zinc Alloy Button</h4>
+                  <p class="lookbook-card-desc">Die-cast Denim Machine hardware built for lifetime retention.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="collection-grid">
